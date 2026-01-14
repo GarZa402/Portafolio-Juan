@@ -97,7 +97,7 @@ export default function Hero() {
 
         {/* Mockup Card */}
         <Reveal animation="zoomIn">
-          <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 border border-gray-700 shadow-2xl transform rotate-3">
+          <div className="hidden md:block bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 border border-gray-700 shadow-2xl transform rotate-3">
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <div className="text-sm text-gray-400">Desarrollador</div>
@@ -137,9 +137,10 @@ export default function Hero() {
               </button>
             </div>
           </div>
+          </Reveal>
           <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-500 rounded-3xl opacity-20 blur-2xl"></div>
           <div className="absolute -top-6 -left-6 w-32 h-32 bg-purple-500 rounded-3xl opacity-20 blur-2xl"></div>
-        </Reveal>
+        
       </div>
     </section>
   );
