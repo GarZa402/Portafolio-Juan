@@ -1,4 +1,5 @@
 import Navigation from "../components/layout/Navigation";
+import { Analytics } from "@vercel/analytics/next"
 import Footer from "../components/layout/Footer";
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -102,6 +103,7 @@ export default function RootLayout({ children }) {
 
         <Navigation />
         <main>{children}</main>
+        <Analytics />
         <Footer />
       </body>
     </html>

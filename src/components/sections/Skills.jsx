@@ -4,7 +4,7 @@ import Reveal from "../animations/Reveal";
 const skillsData = {
   frontend: {
     title: 'Frontend',
-    technologies: ['React', 'HTML/CSS', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'Bootstrap'],
+    technologies: ['React', 'HTML/CSS', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'Bootstrap', 'Next.js'],
   },
   backend: {
     title: 'Backend',
@@ -16,7 +16,7 @@ const skillsData = {
   },
   tools: {
     title: 'Herramientas',
-    technologies: ['Odoo', 'n8n', 'WordPress', 'Netlify'],
+    technologies: ['Odoo', 'n8n', 'WordPress', 'Netlify', 'Vercel'],
   },
 };
 
