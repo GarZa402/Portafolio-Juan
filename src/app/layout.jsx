@@ -1,5 +1,5 @@
 import Navigation from "../components/layout/Navigation";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 import Footer from "../components/layout/Footer";
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -21,7 +21,11 @@ export const metadata = {
     template: "%s | Juan José García Villegas",
   },
   description:
-    "Portafolio de Juan José García Villegas. Desarrollador Web Full Stack especializado en React, JavaScript, Laravel y Node.js. Disponible para proyectos freelance.",
+    "Juan José García Villegas. Desarrollador Web Full Stack especializado en React, JavaScript, Laravel y Node.js.",
+  authors: [
+    { name: "Juan José García Villegas", url: "https://juanjosegarcia.dev" },
+  ],
+  creator: "Juan José García Villegas",
   keywords: [
     "Juan José García Villegas",
     "Desarrollador Web",
@@ -61,7 +65,6 @@ export const metadata = {
 
   icons: {
     icon: "/favicon.ico",
-
   },
 
   twitter: {
@@ -79,7 +82,18 @@ export default function RootLayout({ children }) {
     "@type": "Person",
     name: "Juan José García Villegas",
     jobTitle: "Desarrollador Web Full Stack",
+    description:
+      "Desarrollador Web Full Stack especializado en React, JavaScript, Laravel y Node.js.",
     url: "https://juanjosegarcia.dev",
+    knowsAbout: [
+      "React",
+      "Next.js",
+      "Laravel",
+      "Node.js",
+      "JavaScript",
+      "SQL",
+      "Web Design",
+    ],
     sameAs: [
       "https://github.com/GarZa402",
       "https://www.linkedin.com/in/juanjgarciav",
@@ -87,6 +101,7 @@ export default function RootLayout({ children }) {
     address: {
       "@type": "PostalAddress",
       addressLocality: "Medellín",
+      addressRegion: "Antioquia",
       addressCountry: "CO",
     },
   };
@@ -94,7 +109,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-gray-900 text-white antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-gray-900 text-white antialiased selection:bg-blue-500/30`}
       >
         <script
           type="application/ld+json"

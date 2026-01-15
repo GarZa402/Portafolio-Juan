@@ -1,16 +1,7 @@
-"use client";
 import Reveal from "../animations/Reveal";
 import { ArrowUpRight, Github, Code, Terminal } from "lucide-react";
-import { trackEvent } from "../analytics";
 
 export default function Hero() {
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section
       id="inicio"
@@ -70,22 +61,20 @@ export default function Hero() {
           </p>
 
           <div className="flex items-center gap-4 pt-4">
-            <button
-              onClick={() => {
-                trackEvent("CTA", "Click", "Ver Proyectos");
-                scrollToSection("proyectos");
-              }}
+            {/* Cambio de button a etiqueta <a> */}
+            <a
+              href="#proyectos"
               aria-label="Ver proyectos"
               className="px-8 py-4 bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold transition-all shadow-lg hover:shadow-blue-500/50 flex items-center gap-2"
             >
               <ArrowUpRight size={20} />
               Ver Proyectos
-            </button>
+            </a>
+            
             <a
               href="https://github.com/GarZa402"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackEvent("Outbound", "Click", "GitHub")}
               className="px-6 py-4 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg font-semibold transition-all flex items-center gap-2"
               aria-label="Visitar perfil de GitHub"
             >
@@ -96,51 +85,55 @@ export default function Hero() {
         </header>
 
         {/* Mockup Card */}
-        <Reveal animation="zoomIn">
-          <div className="hidden md:block bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 border border-gray-700 shadow-2xl transform rotate-3">
-            <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <div className="text-sm text-gray-400">Desarrollador</div>
+        <div className="relative">
+          <Reveal animation="zoomIn">
+            <div className="hidden md:block bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 border border-gray-700 shadow-2xl transform rotate-3">
+              <div className="space-y-6">
+                <div className="flex items-center justify-between">
+                  <div className="text-sm text-gray-400">Desarrollador</div>
+                  <a
+                    href="https://github.com/GarZa402"
+                    aria-label="Visitar perfil de GitHub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-xs text-blue-400 hover:text-blue-300 transition-colors"
+                  >
+                    <Github size={16} />
+                    <span>GitHub</span>
+                  </a>
+                </div>
+                <div className="text-4xl font-bold">Juan José García</div>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <Code className="text-blue-400" size={20} />
+                    <div className="flex-1 h-2 bg-gray-700 rounded-full overflow-hidden">
+                      <div className="h-full w-full bg-blue-400 rounded-full"></div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Terminal className="text-blue-400" size={20} />
+                    <div className="flex-1 h-2 bg-gray-700 rounded-full overflow-hidden">
+                      <div className="h-full w-full bg-blue-400 rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Cambio de button a etiqueta <a> */}
                 <a
-                  href="https://github.com/GarZa402"
-                  aria-label="Visitar perfil de GitHub"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackEvent("Outbound", "Click", "GitHub")}
-                  className="flex items-center gap-1 text-xs text-blue-400 hover:text-blue-300 transition-colors"
+                  href="#contacto"
+                  className="block w-full py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold transition-all text-center"
+                  aria-label="Contactar Ahora"
                 >
-                  <Github size={16} />
-                  <span>GitHub</span>
+                  Contactar Ahora
                 </a>
               </div>
-              <div className="text-4xl font-bold">Juan José García</div>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <Code className="text-blue-400" size={20} />
-                  <div className="flex-1 h-2 bg-gray-700 rounded-full overflow-hidden">
-                    <div className="h-full w-full bg-blue-400 rounded-full"></div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Terminal className="text-blue-400" size={20} />
-                  <div className="flex-1 h-2 bg-gray-700 rounded-full overflow-hidden">
-                    <div className="h-full w-full bg-blue-400 rounded-full"></div>
-                  </div>
-                </div>
-              </div>
-              <button
-                onClick={() => scrollToSection("contacto")}
-                className="w-full py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold transition-all cursor-pointer"
-                aria-label="Contactar Ahora"
-              >
-                Contactar Ahora
-              </button>
             </div>
-          </div>
           </Reveal>
-          <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-500 rounded-3xl opacity-20 blur-2xl"></div>
-          <div className="absolute -top-6 -left-6 w-32 h-32 bg-purple-500 rounded-3xl opacity-20 blur-2xl"></div>
-        
+          
+          {/* Decoración de fondo */}
+          <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-500 rounded-3xl opacity-20 blur-2xl -z-10"></div>
+          <div className="absolute -top-6 -left-6 w-32 h-32 bg-purple-500 rounded-3xl opacity-20 blur-2xl -z-10"></div>
+        </div>
       </div>
     </section>
   );

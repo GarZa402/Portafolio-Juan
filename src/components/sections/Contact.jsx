@@ -1,7 +1,5 @@
-"use client"
-
 import { Mail, Phone, Linkedin, Github, Rocket } from 'lucide-react';
-import { trackEvent } from '../analytics';
+
 
 export default function Contact() {
   return (
@@ -39,7 +37,6 @@ export default function Contact() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Enviar correo electrónico"
-            onClick={() => trackEvent('contact', 'Click', 'Email')}
             className="flex items-center justify-center gap-3 bg-gray-800 hover:bg-gray-750 border border-gray-700 hover:border-blue-500 rounded-xl p-6 transition-all group"
           >
             <Mail className="text-blue-400" size={24} />
@@ -57,7 +54,6 @@ export default function Contact() {
             aria-label="Enviar mensaje por WhatsApp"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackEvent('contact', 'Click', 'whatsapp')}
             className="flex items-center justify-center gap-3 bg-gray-800 hover:bg-gray-750 border border-gray-700 hover:border-blue-500 rounded-xl p-6 transition-all group"
           >
             <Phone className="text-green-400" size={24} />
@@ -73,7 +69,6 @@ export default function Contact() {
             href="https://www.linkedin.com/in/juanjgarciav"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackEvent('Outbound', 'Click', 'LinkedIn')}
             className="flex items-center justify-center gap-3 bg-gray-800 hover:bg-gray-750 border border-gray-700 hover:border-blue-500 rounded-xl p-6 transition-all group"
             aria-label="Conectar en LinkedIn"
           >
@@ -94,7 +89,6 @@ export default function Contact() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Enviar correo electrónico"
-            onClick={() => trackEvent('Outbound', 'Click', 'Email')}
             className="px-10 py-4 bg-blue-500 hover:bg-blue-600 rounded-lg font-bold text-lg transition-all shadow-lg shadow-blue-500/50 hover:shadow-blue-500/75 inline-flex items-center justify-center gap-2"
           >
             <Rocket size={24} />
@@ -105,7 +99,6 @@ export default function Contact() {
             href="https://www.linkedin.com/in/juanjgarciav"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackEvent('Outbound', 'Click', 'LinkedIn')}
             className="px-10 py-4 bg-blue-600 hover:bg-blue-700 border border-blue-500 rounded-lg font-bold text-lg transition-all inline-flex items-center justify-center gap-2"
             aria-label="Conectar en LinkedIn"
           >
@@ -117,7 +110,6 @@ export default function Contact() {
             href="https://github.com/GarZa402"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackEvent('Outbound', 'Click', 'GitHub')}
             className="px-10 py-4 bg-gray-800 hover:bg-gray-750 border border-gray-700 hover:border-blue-500 rounded-lg font-bold text-lg transition-all inline-flex items-center justify-center gap-2"
             aria-label="Conectar en GitHub"
           >

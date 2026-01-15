@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X, Linkedin, Github } from 'lucide-react';
-import { trackEvent } from '../analytics';
+
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,7 +71,6 @@ export default function Navigation() {
               href="https://www.linkedin.com/in/juanjgarciav"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackEvent('Outbound', 'Click', 'LinkedIn')}
               className="text-gray-300 hover:text-blue-400 transition-colors"
               aria-label="LinkedIn"
             >
@@ -81,7 +80,6 @@ export default function Navigation() {
               href="https://github.com/GarZa402"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackEvent('Outbound', 'Click', 'GitHub')}
               className="text-gray-300 hover:text-blue-400 transition-colors"
               aria-label="GitHub"
             >
