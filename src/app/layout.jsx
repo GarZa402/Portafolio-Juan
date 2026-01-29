@@ -107,7 +107,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="es">
+    <html lang="es-CO">
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-gray-900 text-white antialiased selection:bg-blue-500/30`}
       >

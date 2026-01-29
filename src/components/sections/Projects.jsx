@@ -68,6 +68,7 @@ export default function Projects() {
                       src={project.image}
                       alt={`Captura de pantalla de ${project.title}`}
                       fill
+                      unoptimized
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
